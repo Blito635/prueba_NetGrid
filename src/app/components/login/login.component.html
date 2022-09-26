@@ -1,0 +1,19 @@
+<form class="container">
+  <div class="container">
+    
+   
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input #email type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input #clave type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="getData(email.value,clave.value)">Loging</button>
+    </div>
+</form>
+      
+<ngb-alert #selfClosingAlert *ngIf="successMessage" >
+  El campo esta vacio o tiene menos de 3 caracteres porfavor complete este
+</ngb-alert>

@@ -1,0 +1,48 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Datos</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        ID a eliminar = {{dataID}}
+      </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="modal.dismiss('Cross click')">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deleteData(dataID)">Eliminar</button>
+      </div>
+  </ng-template>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            
+            <th scope="col"> Id </th>
+            <th scope="col"> Title </th>
+            <th scope="col"> Body </th>
+            <th scope="col">  Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let itemc of items; let indice=index" >
+            
+            <th (click)='posTabala(itemc.id)'>{{itemc.id}}
+            </th >
+            <td (click)='posTabala(itemc.id)'>{{itemc.title}}
+            </td>
+            <td (click)='posTabala(itemc.id)'>{{itemc.body}}
+            </td>
+            <td>
+                <!-- Button trigger modal -->
+                <button class="btn btn-lg btn-outline-primary" (click)="open(content,itemc.id)">Eliminar</button>
+  
+            </td>
+           
+        </tr>
+    </tbody>
+        
+
+</table>
+
+<button class="btn btn-lg btn-outline-primary" (click)="newDato()"> Crear dato</button>

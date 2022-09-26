@@ -1,0 +1,15 @@
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Title</span>
+    <input #title type="text" class="form-control" value={{items?.title}} aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Body</span>
+    <textarea  #body type="text" class="form-control" value={{items?.body}} aria-label="Username" aria-describedby="basic-addon1"></textarea>
+  </div>
+
+  <ngb-alert #selfClosingAlert *ngIf="successMessage" >
+    El campo esta vacio o tiene menos de 3 caracteres porfavor complete este
+</ngb-alert>
+  <button type="button" class="btn btn-primary" (click)="getData(title.value,body.value)">Modificar dato</button>
+
+  
